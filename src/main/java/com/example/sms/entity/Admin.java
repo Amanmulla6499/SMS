@@ -4,8 +4,7 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
-import javax.management.relation.Role;
-
+import com.example.sms.entity.Role; 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -45,7 +44,7 @@ public class Admin implements UserDetails{
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		Set<Authority> authorities=new HashSet<Authority>();
 		this.roles.forEach(userRole->{
-			authorities.add(new Authority("ROLE_"+userRole.getRoleName()));
+			authorities.add(new Authority("ROLE_"+userRole.getRole()));
 		});
 		return authorities;
 	}

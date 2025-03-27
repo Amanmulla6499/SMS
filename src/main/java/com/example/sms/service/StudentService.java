@@ -18,8 +18,6 @@ public interface StudentService {
 
 	List<Student> getStudentsByName(String studentName);
 
-	Student enrollStudentInCourse(Long studentId, Long courseId);
-
 	void deleteStudent(Long studentId);
 
 	Course addCourse(Course course);

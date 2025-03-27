@@ -44,14 +44,7 @@ public class StudentController {
 	public ResponseEntity<List<Student>> getStudentsByName(@PathVariable String name) {
 		return ResponseEntity.ok(studentService.getStudentsByName(name));
 	}
-
-	@PostMapping("/enrollStudent/{studentId}/course/{courseId}")
-	public ResponseEntity<Student> enrollStudentInCourse(@PathVariable Long studentId, @PathVariable Long courseId) {
-
-		Student student = studentService.enrollStudentInCourse(studentId, courseId);
-		return ResponseEntity.ok(student);
-	}
-
+	
 	@DeleteMapping("/deleteStudent/{id}")
 	public ResponseEntity<String> deleteStudent(@PathVariable Long id) {
 		studentService.deleteStudent(id);

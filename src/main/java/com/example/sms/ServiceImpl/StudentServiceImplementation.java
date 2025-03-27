@@ -41,19 +41,6 @@ public class StudentServiceImplementation implements StudentService {
 	public List<Student> getStudentsByName(String studentName) {
 		return studentRepository.findByStudentNameContainingIgnoreCase(studentName);
 	}
-
-	@Override
-	public Student enrollStudentInCourse(Long studentId, Long courseId) {
-		Student student = studentRepository.findById(studentId).orElse(null);
-		Course course = courseRepository.findById(courseId).orElse(null);
-
-		if (student != null && course != null) {
-			student.getCourses().add(course);
-			return studentRepository.save(student);
-		}
-		return null;
-	}
-
 	@Override
 	public void deleteStudent(Long studentId) {
 		studentRepository.deleteById(studentId);

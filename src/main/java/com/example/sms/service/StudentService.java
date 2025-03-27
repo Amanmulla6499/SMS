@@ -27,16 +27,4 @@ public interface StudentService {
 	List<Course> getAllCourses();
 
 	Course getCourseById(Long courseId);
-
-	List<Course> getCoursesByName(String courseName);
-
-	void deleteCourse(Long courseId);
-
-	Address addAddress(Address address);
-
-	List<Address> getAllAddresses();
-
-	List<Address> getAddressesByStudentId(Long studentId);
-
-	void deleteAddress(Long addressId);
 }

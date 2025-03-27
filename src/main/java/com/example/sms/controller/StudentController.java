@@ -75,32 +75,6 @@ public class StudentController {
 		return ResponseEntity.ok(course);
 	}
 
-	@GetMapping("/getCoursesByName/{name}")
-	public ResponseEntity<List<Course>> getCoursesByName(@PathVariable String name) {
-		return ResponseEntity.ok(studentService.getCoursesByName(name));
-	}
-
-	@DeleteMapping("/deleteCourse/{id}")
-	public ResponseEntity<String> deleteCourse(@PathVariable Long id) {
-		studentService.deleteCourse(id);
-		return ResponseEntity.ok("Course deleted successfully");
-	}
-
-	@PostMapping("/addAddress")
-	public ResponseEntity<Address> addAddress(@RequestBody Address address) {
-		Address savedAddress = studentService.addAddress(address);
-		return ResponseEntity.ok(savedAddress);
-	}
-
-	@GetMapping("/getAllAddresses")
-	public ResponseEntity<List<Address>> getAllAddresses() {
-		return ResponseEntity.ok(studentService.getAllAddresses());
-	}
-
-	@GetMapping("/getAddressesByStudentId/{studentId}")
-	public ResponseEntity<List<Address>> getAddressesByStudentId(@PathVariable Long studentId) {
-		return ResponseEntity.ok(studentService.getAddressesByStudentId(studentId));
-	}
 
 	@PutMapping("/updateStudent/{studentId}")
 	public ResponseEntity<String> updateStudent(@PathVariable Long studentId, @RequestBody Student student) {
@@ -109,12 +83,6 @@ public class StudentController {
 		}
 		studentService.updateStudent(student);
 		return ResponseEntity.ok("Student updated successfully");
-	}
-
-	@DeleteMapping("/deleteAddress/{id}")
-	public ResponseEntity<String> deleteAddress(@PathVariable Long id) {
-		studentService.deleteAddress(id);
-		return ResponseEntity.ok("Address deleted successfully");
 	}
 
 }

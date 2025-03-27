@@ -1,6 +1,5 @@
 package com.example.sms.security;
 
-import org.apache.catalina.realm.JNDIRealm.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -34,8 +33,7 @@ public class JwtServiceImpl  implements UserDetailsService{
 		loadUserByUsername(adminId);
 		Admin admin = adminRepository.findByEmail(adminId);
 		Object jwtService;
-		String generatedToken = jwtService.(admin.getEmail());
-		return new JwtResponse(generatedToken,admin);
+		return new JwtResponse(password, admin);
 	}
 
 	@Override

@@ -22,9 +22,6 @@ public class StudentServiceImplementation implements StudentService {
 	@Autowired
 	private CourseRepository courseRepository;
 
-	@Autowired
-	private AddressRepository addressRepository;
-
 	@Override
 	public Student addStudent(Student student) {
 		return studentRepository.save(student);
@@ -75,36 +72,6 @@ public class StudentServiceImplementation implements StudentService {
 	@Override
 	public Course getCourseById(Long courseId) {
 		return courseRepository.findById(courseId).orElse(null);
-	}
-
-	@Override
-	public List<Course> getCoursesByName(String courseName) {
-		return courseRepository.findByCourseNameContainingIgnoreCase(courseName);
-	}
-
-	@Override
-	public void deleteCourse(Long courseId) {
-		courseRepository.deleteById(courseId);
-	}
-
-	@Override
-	public Address addAddress(Address address) {
-		return addressRepository.save(address);
-	}
-
-	@Override
-	public List<Address> getAllAddresses() {
-		return addressRepository.findAll();
-	}
-
-	@Override
-	public List<Address> getAddressesByStudentId(Long studentId) {
-		return addressRepository.findByStudentStudentId(studentId);
-	}
-
-	@Override
-	public void deleteAddress(Long addressId) {
-		addressRepository.deleteById(addressId);
 	}
 
 	@Override

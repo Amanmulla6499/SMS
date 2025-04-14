@@ -32,6 +32,9 @@ public class Admin implements UserDetails{
 	 */
 	private static final long serialVersionUID = 1L;
 	@Id
+	
+	
+	
 	private int AdminId;
 	private String Password;
 	private String email;

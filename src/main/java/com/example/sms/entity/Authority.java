@@ -11,6 +11,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 
 public class Authority implements GrantedAuthority {
+	
+	
+	
 
 	/**
 	 * 

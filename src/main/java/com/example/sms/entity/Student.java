@@ -29,6 +29,9 @@ public class Student {
     @OneToMany(mappedBy = "student", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Address> addresses = new ArrayList<>();
 
+    
+    
+    
     @ManyToMany
     @JoinTable(
         name = "student_course",

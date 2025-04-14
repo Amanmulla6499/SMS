@@ -12,6 +12,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class Role {
 
+	
+	
+	
 	@Id
 	private String role;
 	
